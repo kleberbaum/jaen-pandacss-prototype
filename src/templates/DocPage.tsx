@@ -1,13 +1,6 @@
 import { PageConfig } from '@atsnek/jaen';
-import { Box, Flex, Stack, Text, VStack } from '@chakra-ui/react';
 import { PageProps, graphql } from 'gatsby';
 import * as React from 'react';
-import TableOfContent from '../components/navigation/TableOfContent';
-import useNavOffset from '../hooks/use-nav-offset';
-import MdxEditor from '../components/mdx-editor/MdxEditor';
-import Links from '../components/Links';
-import RightNav from '../components/navigation/RightNav';
-import MainBottomNav from '../components/navigation/MainBottomNav';
 
 // Example links - these would probably be fetched from a CMS or other data source
 const links = [
@@ -22,7 +15,7 @@ const links = [
 ];
 
 const DocPage: React.FC<PageProps> = props => {
-  return <MdxEditor />;
+  return <div />;
 };
 
 export default DocPage;

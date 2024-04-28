@@ -1,12 +1,12 @@
 import { Field, PageConfig, PageProps } from '@atsnek/jaen';
 
-import { Box } from '@chakra-ui/react';
+import { Box } from 'styled-system/jsx';
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
 const ImprintPage: React.FC<PageProps> = () => {
   return (
-    <Box as="main">
+    <Box>
       <Field.Editor name="imprint" />
     </Box>
   );

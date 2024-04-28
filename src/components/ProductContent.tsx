@@ -1,28 +1,22 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import {
   Box,
-  Button,
   Center,
   Flex,
-  Heading,
   HStack,
-  Icon,
-  NumberDecrementStepper,
-  NumberIncrementStepper,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
   Stack,
-  StackDivider,
-  Text,
-  Tooltip,
-  useClipboard,
-  useColorModeValue,
   VStack,
   Wrap,
-  WrapItem,
-} from "@chakra-ui/react";
-import React from "react";
+} from 'styled-system/jsx';
+
+import {
+  Button,
+  Heading,
+  Icon,
+  NumberInput,
+  Text,
+  Tooltip
+} from '~/components/ui'
 
 import { FaShare } from "@react-icons/all-files/fa/FaShare";
 import { FaShoppingBasket } from "@react-icons/all-files/fa/FaShoppingBasket";
@@ -81,8 +75,7 @@ const SliderItem = connectBlock(
   () => {
     return (
       <Box display={"flex"} justifyContent="center">
-        <Box
-          as={Field.Image}
+        <Field.Image
           name="image"
           m="0"
           h="200px"
@@ -109,18 +102,18 @@ export const ProductContent: FC<IProductContentProps> = () => {
 
   return (
     <>
-      <VStack mb={8} spacing={12} w="100%">
+      <VStack mb={8} gap={12} w="100%">
         <Flex direction={{ base: "column", lg: "row" }} w="100%">
           <Stack
             direction={{ base: "column", lg: "row" }}
-            spacing="14"
+            gap="14"
             w="100%"
           >
             <Box pos="relative" w="100%">
               <Field.Section
-                as={Stack}
+                // as={Stack}
                 props={{
-                  spacing: 4,
+                  gap: 4,
                   my: "8",
                   py: "0",
                   bg: "white",
@@ -132,7 +125,7 @@ export const ProductContent: FC<IProductContentProps> = () => {
               />
             </Box>
             <Stack
-              spacing="8"
+              gap="8"
               w="100%"
               position={{ base: "relative", lg: "sticky" }}
               top={{
@@ -244,7 +237,7 @@ const ProductDetail = (props: {
   //   props.product.variants[0].availableForSale
 
   return (
-    <VStack align="left" spacing="4" divider={<StackDivider />}>
+    <VStack alignItems="start" gap="4">
       <Stack>
         <Field.Text
           as={Heading}
@@ -287,7 +280,7 @@ const ProductDetail = (props: {
       </Text>
 
       <Stack>
-        <Stack spacing="4" mt="4">
+        <Stack gap="4" mt="4">
           <HStack>
             {/* <Price prices={prices} /> */}
             100,00 €
@@ -312,15 +305,15 @@ const ProductDetail = (props: {
               defaultValue={minQuantity}
               min={minQuantity}
               value={quantity}
-              onChange={(valueString) => {
-                setQuantity(parseInt(valueString));
-              }}
+              // onChange={(valueString) => {
+              //   setQuantity(parseInt(valueString));
+              // }}
             >
-              <NumberInputField />
+              {/* <NumberInputField />
               <NumberInputStepper>
                 <NumberIncrementStepper />
                 <NumberDecrementStepper />
-              </NumberInputStepper>
+              </NumberInputStepper> */}
             </NumberInput>
             <Button
               // display={{
@@ -328,7 +321,7 @@ const ProductDetail = (props: {
               //   md: 'flex'
               // }}
               size="lg"
-              isDisabled={!availableForSale}
+              disabled={!availableForSale}
               fontWeight="semibold"
               textTransform="uppercase"
               onClick={addProductToBasket}
@@ -352,27 +345,28 @@ const ProductDetail = (props: {
 function ShareText() {
   const value = typeof window !== "undefined" ? window.location.href : "";
 
-  const { hasCopied, onCopy } = useClipboard(value);
+  // const { hasCopied, onCopy } = useClipboard(value);
 
   return (
-    <Center
-      color={hasCopied ? "red.500" : undefined}
-      _hover={{
-        color: hasCopied ? "red.400" : "red.300",
-      }}
-      verticalAlign="center"
-      cursor="pointer"
-    >
-      <Icon as={FaShare} mr="2" />
-      <Text fontWeight="semibold" onClick={onCopy}>
-        Teilen
-        {hasCopied && (
-          <Text ml="2" fontWeight="thin">
-            (Kopiert!)
-          </Text>
-        )}
-      </Text>
-    </Center>
+    <Box></Box>
+    // <Center
+    //   color={hasCopied ? "red.500" : undefined}
+    //   _hover={{
+    //     color: hasCopied ? "red.400" : "red.300",
+    //   }}
+    //   verticalAlign="center"
+    //   cursor="pointer"
+    // >
+    //   <Icon as={FaShare} mr="2" />
+    //   <Text fontWeight="semibold" onClick={onCopy}>
+    //     Teilen
+    //     {hasCopied && (
+    //       <Text ml="2" fontWeight="thin">
+    //         (Kopiert!)
+    //       </Text>
+    //     )}
+    //   </Text>
+    // </Center>
   );
 }
 

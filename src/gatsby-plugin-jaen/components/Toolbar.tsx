@@ -1,7 +1,8 @@
-import SearchMenu from '../../components/search-menu';
+import React from "react";
+//import SearchMenu from '../../components/search-menu';
 
 export interface ToolbarProps {}
 
 export const Toolbar: React.FC<ToolbarProps> = () => {
-  return <SearchMenu />;
+  return <div />;
 };

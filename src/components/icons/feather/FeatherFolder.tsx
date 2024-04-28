@@ -1,5 +1,4 @@
-import { Icon, IconProps } from '@chakra-ui/react';
-import React from 'react';
+import { Icon, IconProps } from '~/components/ui';
 
 /**
  * Feather icon for a folder.

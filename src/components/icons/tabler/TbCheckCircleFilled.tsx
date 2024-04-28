@@ -1,4 +1,4 @@
-import { Icon, IconProps } from '@chakra-ui/react';
+import { Icon, IconProps } from '~/components/ui';
 
 /**
  * Tabler icon: `circle-check-filled`.

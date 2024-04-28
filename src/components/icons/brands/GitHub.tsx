@@ -1,5 +1,4 @@
-import { Icon, IconProps } from '@chakra-ui/icons';
-import React, { FC } from 'react';
+import { Icon, IconProps } from '~/components/ui';
 
 /**
  * GitHub icon.

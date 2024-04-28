@@ -1,19 +1,15 @@
 import {
   Box,
-  Center,
   Container,
   Divider,
   Flex,
   HStack,
-  Icon,
-  Image,
   LinkBox,
   LinkOverlay,
   Spacer,
-  Text,
-  VStack,
-  useColorModeValue
-} from '@chakra-ui/react';
+  VStack
+} from 'styled-system/jsx';
+import { Icon } from '~/components/ui'
 import { FC, ReactNode } from 'react';
 import { Link } from 'gatsby-plugin-jaen';
 import { Field } from '@atsnek/jaen';
@@ -94,7 +90,7 @@ const Footer: FC = () => {
 
   links.forEach((linkGroup, i) => {
     linkElmnts.push(
-      <VStack spacing={3} alignItems="start" wrap="wrap" key={i}>
+      <VStack gap={3} alignItems="start" flexWrap="wrap" key={i}>
         {linkGroup.map((link, i) => {
           if ('isTitle' in link) {
             return (
@@ -124,7 +120,7 @@ const Footer: FC = () => {
       <Box
         borderTopRadius="2xl"
         borderTop="1px solid"
-        borderColor={useColorModeValue('brand.500', 'brand.200')}
+        borderColor="brand.500"
         pb={20}
         position="relative"
         //mt="-25px"
@@ -142,8 +138,8 @@ const Footer: FC = () => {
             <Spacer minW={{base: '5rem', lg: '25%'}} />
             <HStack
               alignItems="start"
-              spacing={{base: 5, sm: 20}}
-              wrap={{base: 'wrap', md: 'nowrap'}}
+              gap={{base: 5, sm: 20}}
+              flexWrap={{base: 'wrap', md: 'nowrap'}}
               mt={{base: 10, md: 0}}>
               {linkElmnts}
             </HStack>
@@ -152,7 +148,7 @@ const Footer: FC = () => {
             mt={20}
             as={LinkBox}
             direction={'row'}
-            spacing="0"
+            gap="0"
             mx="-12px"
             flexWrap={'wrap'}>
             <IconButton
@@ -200,8 +196,7 @@ const Footer: FC = () => {
             //justifyContent={"flex-end"}
             color={'white'}
             mt={20}
-            as={LinkBox}
-            spacing="4"
+            gap="4"
             flexWrap={'wrap'}>
             <LinkBox
               mr="4"
@@ -210,8 +205,8 @@ const Footer: FC = () => {
               _hover={{
                 color: 'brand.500'
               }}>
-              <LinkOverlay href="https://facebook.com/netsnek" isExternal>
-                <Icon as={FaFacebook} boxSize="5" />
+              <LinkOverlay href="https://facebook.com/netsnek" target='blank'>
+                {/* <Icon as={FaFacebook} boxSize="5" /> */}
               </LinkOverlay>
             </LinkBox>
             <LinkBox
@@ -221,8 +216,8 @@ const Footer: FC = () => {
               _hover={{
                 color: 'brand.500'
               }}>
-              <LinkOverlay href="https://instagram.com/netsnek" isExternal>
-                <Icon as={FaInstagram} boxSize="5" />
+              <LinkOverlay href="https://instagram.com/netsnek" target='blank'>
+                {/* <Icon as={FaInstagram} boxSize="5" /> */}
               </LinkOverlay>
             </LinkBox>
             <LinkBox
@@ -232,8 +227,8 @@ const Footer: FC = () => {
               _hover={{
                 color: 'brand.500'
               }}>
-              <LinkOverlay href="https://twitter.com/netsnek_com" isExternal>
-                <Icon as={FaTwitter} boxSize="5" />
+              <LinkOverlay href="https://twitter.com/netsnek_com" target='blank'>
+                {/* <Icon as={FaTwitter} boxSize="5" /> */}
               </LinkOverlay>
             </LinkBox>
             <LinkBox
@@ -243,8 +238,8 @@ const Footer: FC = () => {
               _hover={{
                 color: 'brand.500'
               }}>
-              <LinkOverlay href="https://github.com/netsnek" isExternal>
-                <Icon as={FaGithub} boxSize="5" />
+              <LinkOverlay href="https://github.com/netsnek" target='blank'>
+                {/* <Icon as={FaGithub} boxSize="5" /> */}
               </LinkOverlay>
             </LinkBox>
           </HStack>

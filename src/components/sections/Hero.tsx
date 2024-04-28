@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import {
   AspectRatio,
   Box,
@@ -17,7 +17,7 @@ import { Link } from 'gatsby-plugin-jaen';
 import Netsnek from '../../gatsby-plugin-jaen/components/Netsnek';
 import useScrollPosition from '../../hooks/use-scroll-position';
 import { FadeIn } from '../FadeIn';
-import { useContactModal } from '../../services/contact';
+// import { useContactModal } from '../../services/contact';
 
 interface ScrollArrowsProps {
   isVisible: boolean;
@@ -62,12 +62,12 @@ const Hero: FC = () => {
   //const {ref, scrollTop} = useScrollSync(500)
   const scrollPos = useScrollPosition();
 
-  const contactModal = useContactModal()
+  // const contactModal = useContactModal()
 
   const onContactClick = () => {
-    contactModal.onOpen({
-      meta: {}
-    })
+    // contactModal.onOpen({
+    //   meta: {}
+    // })
   };
 
   return (
@@ -129,7 +129,7 @@ const Hero: FC = () => {
           <Box>
             <Heading
               as="h3"
-              size={{ base: 'sm !important', lg: 'md !important' }}
+              size={{ base: 'sm', lg: 'md' }}
               style={{ animationDelay: '300ms' }}
               fontWeight="500"
               textTransform="uppercase"
@@ -143,7 +143,7 @@ const Hero: FC = () => {
           <Box>
             <Heading
               as="h2"
-              size={{ base: 'xl !important', lg: '2xl !important' }}
+              size={{ base: 'xl', lg: '2xl' }}
               fontWeight="900"
               lineHeight="1.1em"
             >
