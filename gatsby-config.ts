@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby';
+import path from 'path'
 
 require('dotenv').config({
   path: `.env.public`
@@ -16,6 +17,17 @@ const config: GatsbyConfig = {
     DEV_SSR: false
   },
   plugins: [
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '~': path.resolve(__dirname, 'src'),
+          'styled-system': path.resolve(__dirname, 'styled-system'),
+        },
+        extensions: [],
+      },
+    },
     `gatsby-plugin-cloudflare-pages`,
     {
       resolve: `gatsby-plugin-jaen`,
